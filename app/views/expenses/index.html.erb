@@ -29,3 +29,11 @@
 <br>
 
 <%= link_to 'New Expense', new_expense_path %>
+
+
+<br>
+<br>
+
+<div>
+  <h3>Current state: <%= Expense.sum(:price) %> динара.</h3>
+</div>
