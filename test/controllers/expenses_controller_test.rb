@@ -23,11 +23,6 @@ class ExpensesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to expense_url(Expense.last)
   end
 
-  test "should show expense" do
-    get expense_url(@expense)
-    assert_response :success
-  end
-
   test "should get edit" do
     get edit_expense_url(@expense)
     assert_response :success
