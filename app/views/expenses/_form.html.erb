@@ -21,6 +21,14 @@
     <%= form.text_area :description, id: :expense_description %>
   </div>
 
+  <div class='input-group date' id='datetimepicker1'>
+    <%= form.label :billed_at %>
+    <%= form.text_field :billed_at, id: :expense_billed_at, class: 'form-control' %>
+    <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </span>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
