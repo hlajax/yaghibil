@@ -3,7 +3,11 @@
 <h1>Expenses</h1>
 
 <div>
-  <h3>Total for current month: <%= Expense.total_for_current_month %> динара.</h3>
+  <h3>Укупно за тренутни месец: <%= Expense.total_for_current_month %> динара.</h3>
+</div>
+
+<div>
+  <h3> <%= link_to "Детаљнија статистика", statistics_path %> </h3>
 </div>
 
 <br>

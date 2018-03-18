@@ -1,0 +1,19 @@
+<h1>Трошкови по месецима</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Месец</th>
+      <th>Износ</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expenses_by_month.each do |expense_by_month| %>
+      <tr>
+        <td><%= expense_by_month.month.strftime("%B") %></td>
+        <td><%= expense_by_month.total %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
