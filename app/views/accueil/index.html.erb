@@ -1,0 +1,120 @@
+<%=render 'menus/top'%>
+<div id="layoutSidenav">
+<%=render 'menus/side'%>
+  <div id="layoutSidenav_content">
+    <main>
+    	<div class="container-fluid">
+            <h1 class="mt-4">Tableau de bord</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Tableau de bord</li>
+            </ol>
+            <p id="notice" class="text-success"><%= notice %></p>
+            <div class="row">
+            	<div class="col-lg-6">
+            		<div class="row">
+                          <div class="col-lg-12 col-12">
+                            
+                            <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">
+                                    	<h2>Dépenses</h2>
+
+<div>
+  <h4>Total de dépenses du mois: <b><%= Expense.total_for_current_month %> XFA</b>.</h4>
+</div>
+
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <%= link_to "Bilan de dépenses", statistics_path, class:"small text-white stretched-link" %>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+
+<%= link_to 'Ajouter une dépense', new_expense_path, class:"btn btn-success mt-2" %>
+<div class="table-responsive">
+  <table class="table table-bordered mt-2" id="dataTable" width="100%" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Montant</th>
+      <th>Catégorie</th>
+      <th>Source</th>
+      <th>Dépensé le</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expenses.each do |expense| %>
+      <tr>
+        <td><%= expense.titre %></td>
+        <td><%= expense.price %> XFA</td>
+        <td><%= expense.category.titre%></td>
+        <td><%= expense.source.titre %></td>
+        <td><%= expense.billed_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+                          </div>
+                        </div>
+            	</div>
+            	<div class="col-lg-6">
+            		<div class="row">
+                          <div class="col-lg-12 col-12">
+                            <div class="card bg-danger text-white mb-4">
+                                    <div class="card-body">
+                                    	<h2>Entrées</h2>
+
+<div>
+  <h4>Total de entrées du mois: <b><%= Income.total_for_current_month %> XFA</b>.</h4>
+</div>
+
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <%= link_to "Bilan des entrées", statistics_path, class:"small text-white stretched-link" %>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+
+<%= link_to 'Ajouter une entrée', new_income_path, class:"btn btn-danger mt-2" %>
+<div class="table-responsive">
+  <table class="table table-bordered mt-2" id="dataTable" width="100%" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Montant</th>
+      <th>Catégorie</th>
+      <th>Source</th>
+      <th>Entré le</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @incomes.each do |income| %>
+      <tr>
+        <td><%= income.titre %></td>
+        <td><%= income.price %></td>
+        <td><%= income.incategory.titre%></td>
+        <td><%= income.source.titre %></td>
+        <td><%= income.billed_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+                          </div>
+                        </div>
+            	</div>
+            </div>
+        </div>
+    </main>
+    <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; <b>YAGHIBIL</b> 2020</div>
+                         
+                        </div>
+                    </div>
+                </footer>
+   </div>
+</div>

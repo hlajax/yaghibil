@@ -1,0 +1,56 @@
+        <%=render 'menus/top'%>
+        <div id="layoutSidenav">
+            <%=render 'menus/side'%>
+                         <div id="layoutSidenav_content">
+                <main>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 offset-lg-3">
+                        <p id="notice"><%= notice %></p>
+
+
+<div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header bg-primary text-white"><h3 class="text-center font-weight-light my-4">Entrée N° <%= @income.id %> </h3></div>
+                                    <div class="card-body">
+                                        <h4>
+  <strong>Titre:</strong>
+  <%= @income.titre %>
+</h4>
+
+<h4>
+  <strong>Price:</strong>
+  <%= @income.price %>
+</h4>
+
+<h4>
+  <strong>Description:</strong>
+</h4>
+ <p>
+  <%= @income.description %>
+</p>
+
+<p>
+  <strong>Entrée le:</strong>
+  <%= @income.billed_at %>
+</p>
+
+<%= link_to 'Modifier', edit_expense_path(@income) %> |
+<%= link_to 'Retour', incomes_path %>
+                                    </div>
+                                    
+                                </div>
+                      </div>
+                    </div>
+                  </div>
+</main>
+               <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; <b>YAGHIBIL</b> 2020</div>
+                         
+                        </div>
+                    </div>
+                </footer>
+            </div>
+           
+        </div>

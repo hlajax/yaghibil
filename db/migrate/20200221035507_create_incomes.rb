@@ -1,0 +1,12 @@
+class CreateIncomes < ActiveRecord::Migration[5.2]
+  def change
+    create_table :incomes do |t|
+      t.string :titre
+      t.integer :price
+      t.text :description
+      t.datetime :billed_at
+
+      t.timestamps
+    end
+  end
+end

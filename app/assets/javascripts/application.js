@@ -13,9 +13,10 @@
 //= require rails-ujs
 //= require_tree .
 //= require jquery
-//= require bootstrap-sprockets
 //= require moment
-//= require bootstrap-datetimepicker
+// If you require timezone data (see moment-timezone-rails for additional file options)
+//= require moment-timezone-with-data
+//= require tempusdominus-bootstrap-4
 
 $(function () {
     $('#datetimepicker1').datetimepicker({ sideBySide: true, format: 'YYYY-MM-DD HH:mm' });

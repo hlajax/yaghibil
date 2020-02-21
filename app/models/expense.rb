@@ -4,4 +4,7 @@ class Expense < ApplicationRecord
   def self.total_for_current_month
     where("billed_at > ? AND billed_at < ?", Time.current.beginning_of_month, Time.current.end_of_month).sum(:price)
   end
+  belongs_to :category
+  belongs_to :source
+  belongs_to :administrateur
 end
