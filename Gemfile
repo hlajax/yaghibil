@@ -10,7 +10,7 @@ ruby '2.6.5'
 gem 'rails', '~> 5.2.4'
 # Use sqlite3 as the database for Active Record
 gem 'pg', '~> 1.2', '>= 1.2.2'
-gem 'wdm', '>= 0.1.0'
+#gem 'wdm', '>= 0.1.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
