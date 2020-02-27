@@ -1,0 +1,15 @@
+ <%=render 'menus/top'%>
+        <div id="layoutSidenav">
+            <%=render 'menus/side'%>
+                         <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+<h1>Ajouter une Automobile</h1>
+
+<%= render 'form', automobile: @automobile %>
+
+<%= link_to 'Retour', automobiles_path, class:"btn btn-danger" %>
+</div>
+</main>
+</div>
+</div>

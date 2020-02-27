@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :automobiles
   devise_for :administrateurs
   resources :accueil
   resources :incategories

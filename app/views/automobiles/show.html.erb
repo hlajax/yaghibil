@@ -1,0 +1,62 @@
+        <%=render 'menus/top'%>
+        <div id="layoutSidenav">
+            <%=render 'menus/side'%>
+                         <div id="layoutSidenav_content">
+                <main>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 offset-lg-3">
+                        <p id="notice"><%= notice %></p>
+
+
+<div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header bg-primary text-white"><h3 class="text-center font-weight-light my-4">Automobile N° <%= @automobile.id %> </h3></div>
+<p id="notice"><%= notice %></p>
+<div class="card-body">
+<p>
+  <strong>Marque:</strong>
+  <%= @automobile.marque %>
+</p>
+
+<p>
+  <strong>Modele:</strong>
+  <%= @automobile.modele %>
+</p>
+
+<p>
+  <strong>Couleur:</strong>
+  <%= @automobile.couleur %>
+</p>
+
+<p>
+  <strong>Matricule:</strong>
+  <%= @automobile.matricule %>
+</p>
+
+<h5>
+  <strong>Prix:</strong>
+  <b style="font-size: 24px;"><%= @automobile.prix %> XAF</b>
+</h5>
+
+
+
+<%= link_to 'Modifier', edit_automobile_path(@automobile) %> |
+<%= link_to 'Retour', automobiles_path %>
+</div>
+                                    
+                                </div>
+                      </div>
+                    </div>
+                  </div>
+</main>
+               <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; <b>YAGHIBIL</b> 2020</div>
+                         
+                        </div>
+                    </div>
+                </footer>
+            </div>
+           
+        </div>

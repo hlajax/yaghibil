@@ -1,0 +1,43 @@
+<%= form_with(model: automobile, local: true) do |form| %>
+  <% if automobile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(automobile.errors.count, "error") %> prohibited this automobile from being saved:</h2>
+
+      <ul>
+      <% automobile.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+  <div class="form-group col-6">
+    <%= form.label :marque %>
+    <%= form.text_field :marque, class:"form-control", required: :true %>
+  </div>
+
+  <div class="form-group col-6">
+    <%= form.label :modèle %>
+    <%= form.text_field :modele, class:"form-control", required: :true %>
+  </div>
+
+  <div class="form-group col-6">
+    <%= form.label :couleur %>
+    <%= form.text_field :couleur, class:"form-control", required: :true %>
+  </div>
+
+  <div class="form-group col-6">
+    <%= form.label :matricule %>
+    <%= form.text_field :matricule, class:"form-control", required: :true %>
+  </div>
+
+  <div class="form-group col-6">
+    <%= form.label :prix %>
+    <%= form.text_field :prix, class:"form-control", required: :true %>
+  </div>
+
+  <div class="form-group col-12">
+    <%= form.submit "Ajouter l'automobile", class:"btn btn-success" %>
+  </div>
+  </div>
+<% end %>
