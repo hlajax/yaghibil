@@ -29,7 +29,7 @@ class AutoexpensesController < ApplicationController
 
     respond_to do |format|
       if @autoexpense.save
-        format.html { redirect_to @autoexpense, notice: 'Autoexpense was successfully created.' }
+        format.html { redirect_to autoexpenses_url, notice: 'Dépense ajoutée !' }
         format.json { render :show, status: :created, location: @autoexpense }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class AutoexpensesController < ApplicationController
   def update
     respond_to do |format|
       if @autoexpense.update(autoexpense_params)
-        format.html { redirect_to @autoexpense, notice: 'Autoexpense was successfully updated.' }
+        format.html { redirect_to autoexpenses_url, notice: 'Dépense modifiée !' }
         format.json { render :show, status: :ok, location: @autoexpense }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class AutoexpensesController < ApplicationController
   def destroy
     @autoexpense.destroy
     respond_to do |format|
-      format.html { redirect_to autoexpenses_url, notice: 'Autoexpense was successfully destroyed.' }
+      format.html { redirect_to autoexpenses_url, notice: 'Dépense supprimée !' }
       format.json { head :no_content }
     end
   end

@@ -10,36 +10,37 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  <div class="row">
+  <div class="form-group col-6">
     <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.number_field :price, class:"form-control", required: :true %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-6">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class:"form-control", required: :true %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-6">
     <%= form.label :travaux %>
-    <%= form.text_field :travaux %>
+    <%= form.text_field :travaux, class:"form-control", required: :true %>
   </div>
 
-  <div class="field">
+  <div class="form-group col-6">
     <%= form.label :designation %>
-    <%= form.text_field :designation %>
+    <%= form.text_field :designation, class:"form-control", required: :true %>
   </div>
     <div class="form-group col-6">
     <%= form.label :automobile %>
     <%= form.collection_select :automobile_id, Automobile.all, :id, :marque, {prompt:"Sélectionner l'automobile"} , class:"form-control", required: :true %>
   </div>
-  <div class="field">
+  <div class="form-group col-6">
     <%= form.label :billed_at %>
-    <%= form.datetime_select :billed_at %>
+    <%= form.datetime_select :billed_at, class:"form-control", required: :true %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group col-6">
+    <%= form.submit "Ajouter la dépense", class:"btn btn-success" %>
   </div>
 <% end %>
+</div>

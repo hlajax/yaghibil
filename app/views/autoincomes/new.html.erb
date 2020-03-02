@@ -1,5 +1,15 @@
-<h1>New Autoincome</h1>
+ <%=render 'menus/top'%>
+        <div id="layoutSidenav">
+            <%=render 'menus/side'%>
+                         <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+<h1>Nouvelle entrée</h1>
 
 <%= render 'form', autoincome: @autoincome %>
 
-<%= link_to 'Back', autoincomes_path %>
+<%= link_to 'Retour', autoincomes_path, class:"btn btn-danger" %>
+</div>
+</main>
+</div>
+</div>

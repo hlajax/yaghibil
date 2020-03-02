@@ -39,18 +39,18 @@
                           <div class="col-lg-12 col-12">
                           	 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">
-                                    	<h2>Dépenses</h2>
+                                    	<h2>Entrées</h2>
 
 <div>
   
   <% @fonds.each do |fond| %>
-        <h4>Total de dépenses du mois: <b><%= Autoincome.total_for_current_month %> XFA</b>.</h4>
+        <h4>Total des entrées du mois: <b><%= Autoincome.total_for_current_month %> XFA</b>.</h4>
     <% end %>
 </div>
 
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <%= link_to "Bilan de dépenses", statistics_path, class:"small text-white stretched-link" %>
+                                        <%= link_to "Bilan des entrées", statistics_path, class:"small text-white stretched-link" %>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -63,20 +63,20 @@
                           <div class="col-lg-12 col-12">
                             <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">
-                                    	<h2>Entrées</h2>
+                                    	<h2>Dépenses</h2>
 
 <div>
-  <h4>Total de entrées du mois: <b><%= Autoexpense.total_for_current_month %> XFA</b>.</h4>
+  <h4>Total des dépenses du mois: <b><%= Autoexpense.total_for_current_month %> XFA</b>.</h4>
 </div>
 
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <%= link_to "Bilan des entrées", statistics_path, class:"small text-white stretched-link" %>
+                                        <%= link_to "Bilan des dépenses", statistics_path, class:"small text-white stretched-link" %>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
 
-<%= link_to 'Ajouter une entrée', new_income_path, class:"btn btn-danger mt-2" %>
+<%= link_to 'Ajouter une entrée', new_autoexpense_path, class:"btn btn-danger mt-2" %>
 <div class="table-responsive">
   <table class="table table-bordered mt-2" id="dataTable" width="100%" cellspacing="0">
   <thead>

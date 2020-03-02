@@ -28,7 +28,7 @@ class AutoincomesController < ApplicationController
 
     respond_to do |format|
       if @autoincome.save
-        format.html { redirect_to @autoincome, notice: 'Autoincome was successfully created.' }
+        format.html { redirect_to autoincomes_url, notice: 'Entrée  ajoutée !' }
         format.json { render :show, status: :created, location: @autoincome }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class AutoincomesController < ApplicationController
   def update
     respond_to do |format|
       if @autoincome.update(autoincome_params)
-        format.html { redirect_to @autoincome, notice: 'Autoincome was successfully updated.' }
+        format.html { redirect_to autoincomes_url, notice: 'Entrée  modifiée !' }
         format.json { render :show, status: :ok, location: @autoincome }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class AutoincomesController < ApplicationController
   def destroy
     @autoincome.destroy
     respond_to do |format|
-      format.html { redirect_to autoincomes_url, notice: 'Autoincome was successfully destroyed.' }
+      format.html { redirect_to autoincomes_url, notice: 'Entrée supprimée !' }
       format.json { head :no_content }
     end
   end
