@@ -1,0 +1,124 @@
+<%=render 'menus/top'%>
+<div id="layoutSidenav">
+<%=render 'menus/side'%>
+  <div id="layoutSidenav_content">
+    <main>
+    	<div class="container-fluid">
+            <h1 class="mt-4">Tableau de bord</h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item active">Tableau de bord</li>
+            </ol>
+            <p id="notice" class="text-success"><%= notice %></p>
+            <div class="row">
+            	<div class="col-lg-4">
+            		<div class="row">
+                          <div class="col-lg-12 col-12">
+                          	 <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body">
+                                    	<h2>Fond disponible</h2>
+
+<div>
+  
+  <% @fonds.each do |fond| %>
+        <h4>Total de dépenses du mois: <b><%= fond.montant - Autoexpense.total_for_current_month + Autoincome.total_for_current_month %> XFA</b>.</h4>
+    <% end %>
+</div>
+
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <%= link_to "Bilan de dépenses", statistics_path, class:"small text-white stretched-link" %>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+    
+</div>
+                        </div>
+            	</div>
+            	<div class="col-lg-4">
+            		<div class="row">
+                          <div class="col-lg-12 col-12">
+                          	 <div class="card bg-success text-white mb-4">
+                                    <div class="card-body">
+                                    	<h2>Dépenses</h2>
+
+<div>
+  
+  <% @fonds.each do |fond| %>
+        <h4>Total de dépenses du mois: <b><%= Autoincome.total_for_current_month %> XFA</b>.</h4>
+    <% end %>
+</div>
+
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <%= link_to "Bilan de dépenses", statistics_path, class:"small text-white stretched-link" %>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+    
+</div>
+                        </div>
+            	</div>
+            	<div class="col-lg-4">
+            		<div class="row">
+                          <div class="col-lg-12 col-12">
+                            <div class="card bg-danger text-white mb-4">
+                                    <div class="card-body">
+                                    	<h2>Entrées</h2>
+
+<div>
+  <h4>Total de entrées du mois: <b><%= Autoexpense.total_for_current_month %> XFA</b>.</h4>
+</div>
+
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <%= link_to "Bilan des entrées", statistics_path, class:"small text-white stretched-link" %>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+
+<%= link_to 'Ajouter une entrée', new_income_path, class:"btn btn-danger mt-2" %>
+<div class="table-responsive">
+  <table class="table table-bordered mt-2" id="dataTable" width="100%" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Price</th>
+      <th>Description</th>
+      <th>Travaux</th>
+      <th>Designation</th>
+      <th>Billed at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @autoexpenses.each do |autoexpense| %>
+      <tr>
+        <td><%= autoexpense.price %></td>
+        <td><%= autoexpense.description %></td>
+        <td><%= autoexpense.travaux %></td>
+        <td><%= autoexpense.designation %></td>
+        <td><%= autoexpense.billed_at %></td>
+        <td><%= link_to 'Show', autoexpense %></td>
+        <td><%= link_to 'Edit', edit_autoexpense_path(autoexpense) %></td>
+        <td><%= link_to 'Destroy', autoexpense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+                          </div>
+                        </div>
+            	</div>
+            </div>
+        </div>
+    </main>
+    <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; <b>YAGHIBIL</b> 2020</div>
+                         
+                        </div>
+                    </div>
+                </footer>
+   </div>
+</div>

@@ -1,0 +1,2 @@
+module DashautoHelper
+end

@@ -1,0 +1,45 @@
+<%= form_with(model: autoincome, local: true) do |form| %>
+  <% if autoincome.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(autoincome.errors.count, "error") %> prohibited this autoincome from being saved:</h2>
+
+      <ul>
+      <% autoincome.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :travaux %>
+    <%= form.text_field :travaux %>
+  </div>
+
+  <div class="field">
+    <%= form.label :designation %>
+    <%= form.text_field :designation %>
+  </div>
+  <div class="field">
+    <%= form.label :automobile %>
+    <%= form.collection_select :automobile_id, Automobile.all, :id, :marque, {prompt:"Sélectionner l'automobile"} , class:"form-control", required: :true %>
+  </div>
+  <div class="field">
+    <%= form.label :billed_at %>
+    <%= form.datetime_select :billed_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

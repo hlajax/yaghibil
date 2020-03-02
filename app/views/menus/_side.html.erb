@@ -1,22 +1,60 @@
 <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
-                    <div class="sb-sidenav-menu">
-                        <div class="nav">
-                            <div class="sb-sidenav-menu-heading"></div>
-                            <a class="nav-link" href="/"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Tableau de bord</a
-                            >
-                            <a class="nav-link" href="/expenses"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dépenses</a
-                            >
-                            <a class="nav-link" href="/incomes"
-                                ><div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Entrées</a
-                            >
-                            <div class="sb-sidenav-menu-heading"></div>
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading"> Personnel</div>
+                    <a class="nav-link" href="/">
+                        <div class="sb-nav-link-icon">
+                            <i class="fas fa-tachometer-alt"></i></div>
+                                Tableau de bord
+                    </a>
+
+                    <a class="nav-link" href="/expenses">
+                        <div class="sb-nav-link-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                                Dépenses
+                    </a>
+
+                    <a class="nav-link" href="/incomes">
+                        <div class="sb-nav-link-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                                Entrées
+                    </a>
+                    <div class="sb-sidenav-menu-heading">Parc Automobile</div>
+                    <a class="nav-link" href="/dashauto">
+                        <div class="sb-nav-link-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                                Tableau de bord
+                    </a>
+
+                    <a class="nav-link" href="/autoexpenses">
+                        <div class="sb-nav-link-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                                Dépenses
+                    </a>
+
+                    <a class="nav-link" href="/autoincomes">
+                        <div class="sb-nav-link-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                                Entrées
+                    </a>
+
+                    <a class="nav-link" href="/automobiles">
+                        <div class="sb-nav-link-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                                Automobiles
+                    </a>
+
+
+
+                    <!--<div class="sb-sidenav-menu-heading"></div>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Dépenses
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div
@@ -49,7 +87,7 @@
                                     <%= link_to 'Tout voir', automobiles_path, class:"nav-link" %>
                                 </nav>
                             </div>
-                            <!--<div class="sb-sidenav-menu-heading">Addons</div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
                             <a class="nav-link" href="charts.html"
                                 ><div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Charts</a

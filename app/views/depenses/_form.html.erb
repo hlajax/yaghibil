@@ -1,0 +1,43 @@
+<%= form_with(model: depense, local: true) do |form| %>
+  <% if depense.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(depense.errors.count, "error") %> prohibited this depense from being saved:</h2>
+
+      <ul>
+      <% depense.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :designation %>
+    <%= form.text_field :designation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :travaux %>
+    <%= form.text_area :travaux %>
+  </div>
+
+  <div class="field">
+    <%= form.label :prix %>
+    <%= form.text_field :prix %>
+  </div>
+
+  <div class="field">
+    <%= form.label :billed_at %>
+    <%= form.datetime_select :billed_at %>
+  </div>
+
+
+  <div class="form-group col-6">
+    <%= form.label :automobile %>
+    <%= form.collection_select :automobile_id, Automobile.all, :id, :marque, {prompt:"Sélectionner l'automobile"} , class:"form-control", required: :true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  price: 1
+  description: MyText
+  travaux: MyString
+  designation: MyString
+  billed_at: 2020-03-02 08:40:58
+
+two:
+  price: 1
+  description: MyText
+  travaux: MyString
+  designation: MyString
+  billed_at: 2020-03-02 08:40:58

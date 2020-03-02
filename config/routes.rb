@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :autoincomes
+  resources :dashauto
+  resources :autoexpenses
+  resources :fonds
+  resources :depenses
   resources :automobiles
   devise_for :administrateurs
   resources :accueil

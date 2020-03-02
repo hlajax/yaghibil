@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @autoincome.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @autoincome.description %>
+</p>
+
+<p>
+  <strong>Travaux:</strong>
+  <%= @autoincome.travaux %>
+</p>
+
+<p>
+  <strong>Designation:</strong>
+  <%= @autoincome.designation %>
+</p>
+
+<p>
+  <strong>Billed at:</strong>
+  <%= @autoincome.billed_at %>
+</p>
+
+<%= link_to 'Edit', edit_autoincome_path(@autoincome) %> |
+<%= link_to 'Back', autoincomes_path %>

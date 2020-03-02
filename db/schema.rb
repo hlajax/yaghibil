@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_27_032356) do
+ActiveRecord::Schema.define(version: 2020_03_02_102327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,30 @@ ActiveRecord::Schema.define(version: 2020_02_27_032356) do
     t.index ["reset_password_token"], name: "index_administrateurs_on_reset_password_token", unique: true
   end
 
+  create_table "autoexpenses", force: :cascade do |t|
+    t.integer "price"
+    t.text "description"
+    t.string "travaux"
+    t.string "designation"
+    t.datetime "billed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "administrateur_id"
+    t.integer "automobile_id"
+  end
+
+  create_table "autoincomes", force: :cascade do |t|
+    t.integer "price"
+    t.text "description"
+    t.string "travaux"
+    t.string "designation"
+    t.datetime "billed_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "administrateur_id"
+    t.integer "automobile_id"
+  end
+
   create_table "automobiles", force: :cascade do |t|
     t.string "marque"
     t.string "modele"
@@ -36,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_02_27_032356) do
     t.bigint "administrateur_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "billed_at"
     t.index ["administrateur_id"], name: "index_automobiles_on_administrateur_id"
   end
 
@@ -44,6 +69,18 @@ ActiveRecord::Schema.define(version: 2020_02_27_032356) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "depenses", force: :cascade do |t|
+    t.string "designation"
+    t.text "travaux"
+    t.string "prix"
+    t.datetime "billed_at"
+    t.bigint "automobile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "administrateur_id"
+    t.index ["automobile_id"], name: "index_depenses_on_automobile_id"
   end
 
   create_table "expenses", force: :cascade do |t|
@@ -56,6 +93,13 @@ ActiveRecord::Schema.define(version: 2020_02_27_032356) do
     t.integer "category_id"
     t.integer "source_id"
     t.integer "administrateur_id"
+  end
+
+  create_table "fonds", force: :cascade do |t|
+    t.string "titre"
+    t.integer "montant"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "incategories", force: :cascade do |t|
@@ -86,4 +130,5 @@ ActiveRecord::Schema.define(version: 2020_02_27_032356) do
   end
 
   add_foreign_key "automobiles", "administrateurs"
+  add_foreign_key "depenses", "automobiles"
 end

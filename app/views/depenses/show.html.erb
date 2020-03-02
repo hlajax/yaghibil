@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Designation:</strong>
+  <%= @depense.designation %>
+</p>
+
+<p>
+  <strong>Travaux:</strong>
+  <%= @depense.travaux %>
+</p>
+
+<p>
+  <strong>Prix:</strong>
+  <%= @depense.prix %>
+</p>
+
+<p>
+  <strong>Billed at:</strong>
+  <%= @depense.billed_at %>
+</p>
+
+<p>
+  <strong>Automobile:</strong>
+  <%= @depense.automobile.marque %>
+</p>
+
+<%= link_to 'Edit', edit_depense_path(@depense) %> |
+<%= link_to 'Back', depenses_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @autoexpense.price %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @autoexpense.description %>
+</p>
+
+<p>
+  <strong>Travaux:</strong>
+  <%= @autoexpense.travaux %>
+</p>
+
+<p>
+  <strong>Designation:</strong>
+  <%= @autoexpense.designation %>
+</p>
+
+<p>
+  <strong>Billed at:</strong>
+  <%= @autoexpense.billed_at %>
+</p>
+
+<%= link_to 'Edit', edit_autoexpense_path(@autoexpense) %> |
+<%= link_to 'Back', autoexpenses_path %>

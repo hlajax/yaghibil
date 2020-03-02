@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @fond.titre %>
+</p>
+
+<p>
+  <strong>Montant:</strong>
+  <%= @fond.montant %>
+</p>
+
+<%= link_to 'Edit', edit_fond_path(@fond) %> |
+<%= link_to 'Back', fonds_path %>
