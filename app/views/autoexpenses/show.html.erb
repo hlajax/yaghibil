@@ -1,7 +1,21 @@
+        <%=render 'menus/top'%>
+        <div id="layoutSidenav">
+            <%=render 'menus/side'%>
+                         <div id="layoutSidenav_content">
+                <main>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-6 offset-lg-3">
+                        <p id="notice"><%= notice %></p>
+
+
+<div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header bg-primary text-white"><h3 class="text-center font-weight-light my-4">Dépense N° <%= @autoexpense.id %> </h3></div>
+                                    <div class="card-body">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Price:</strong>
+  <strong>Montant:</strong>
   <%= @autoexpense.price %>
 </p>
 
@@ -21,9 +35,27 @@
 </p>
 
 <p>
-  <strong>Billed at:</strong>
+  <strong>Dépensé le:</strong>
   <%= @autoexpense.billed_at %>
 </p>
 
-<%= link_to 'Edit', edit_autoexpense_path(@autoexpense) %> |
-<%= link_to 'Back', autoexpenses_path %>
+<%= link_to 'Modifier', edit_autoexpense_path(@autoexpense) %> |
+<%= link_to 'Retour', autoexpenses_path %>
+</div>
+                                    
+                                </div>
+                      </div>
+                    </div>
+                  </div>
+</main>
+               <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; <b>YAGHIBIL</b> 2020</div>
+                         
+                        </div>
+                    </div>
+                </footer>
+            </div>
+           
+        </div>

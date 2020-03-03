@@ -1,6 +1,16 @@
-<h1>Editing Income</h1>
+ <%=render 'menus/top'%>
+        <div id="layoutSidenav">
+            <%=render 'menus/side'%>
+                         <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+<h1>Modifier l'entrée</h1>
 
 <%= render 'form', income: @income %>
 
-<%= link_to 'Show', @income %> |
-<%= link_to 'Back', incomes_path %>
+<%= link_to 'Afficher', @income %> |
+<%= link_to 'Modifier', incomes_path %>
+</div>
+</main>
+</div>
+</div>

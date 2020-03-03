@@ -1,6 +1,16 @@
-<h1>Editing Autoexpense</h1>
+ <%=render 'menus/top'%>
+        <div id="layoutSidenav">
+            <%=render 'menus/side'%>
+                         <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+<h1>Modifier Dépense</h1>
 
 <%= render 'form', autoexpense: @autoexpense %>
 
-<%= link_to 'Show', @autoexpense %> |
-<%= link_to 'Back', autoexpenses_path %>
+<%= link_to 'Afficher', @autoexpense %> |
+<%= link_to 'Retour', autoexpenses_path %>
+</div>
+</main>
+</div>
+</div>

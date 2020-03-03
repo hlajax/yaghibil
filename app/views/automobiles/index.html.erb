@@ -12,11 +12,11 @@
 <div class="card bg-success text-white mb-4">
                                     <div class="card-body">
                                       <div>
-  <h3>Automobiles disponibles: <b><%= Automobile.count %></b></h3>
+  <h3>Automobiles disponibles: <b><%=@dispos.count%></b></h3>
 </div>
 
                                     </div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <div class="card-footer align-items-center justify-content-between d-none">
                                       <%= link_to "Bilan", statistics_path, class:"small text-white stretched-link" %>
                                         
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -53,11 +53,11 @@
 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body">
                                       <div>
-  <h3>Automobiles non disponibles: <b><%= Automobile.count %></b></h3>
+  <h3>Automobiles vendues: <b><%=@vendus.count%></b></h3>
 </div>
 
                                     </div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <div class="card-footer d-none align-items-center justify-content-between">
                                       <%= link_to "Bilan", statistics_path, class:"small text-white stretched-link" %>
                                         
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
@@ -93,7 +93,7 @@
                <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; <b>YAGHIBIL</b> 2020</div>
+                            <div class="text-muted">Copyright &copy; <b>OW Technology</b> 2020</div>
                          
                         </div>
                     </div>

@@ -1,6 +1,16 @@
-<h1>Editing Expense</h1>
+ <%=render 'menus/top'%>
+        <div id="layoutSidenav">
+            <%=render 'menus/side'%>
+                         <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+<h1>Modifier Dépense</h1>
 
 <%= render 'form', expense: @expense %>
 
-<%= link_to 'Show', @expense %> |
-<%= link_to 'Back', expenses_path %>
+<%= link_to 'Afficher', @expense %> |
+<%= link_to 'Retour', expenses_path %>
+</div>
+</main>
+</div>
+</div>
