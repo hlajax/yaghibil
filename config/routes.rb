@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :etats
   resources :autoincomes
   resources :dashauto
   resources :autoexpenses

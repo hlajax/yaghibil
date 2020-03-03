@@ -1,10 +1,12 @@
 class AutomobilesController < ApplicationController
-  before_action :set_automobile, only: [:show, :edit, :update, :destroy]
+  before_action :set_automobile, only: [:show, :edit, :update, :destroy, :vendre]
   before_action :authenticate_administrateur!, except:[:index, :show]
   # GET /automobiles
   # GET /automobiles.json
   def index
     @automobiles = Automobile.all
+    @dispos = Automobile.all.where("etat_id= 1")
+    @vendus = Automobile.all.where("etat_id= 2")
   end
 
   # GET /automobiles/1
@@ -21,6 +23,10 @@ class AutomobilesController < ApplicationController
   def edit
   end
 
+  # GET /automobiles/1/edit
+  def vendre
+  end
+
   # POST /automobiles
   # POST /automobiles.json
   def create
@@ -28,7 +34,7 @@ class AutomobilesController < ApplicationController
 
     respond_to do |format|
       if @automobile.save
-        format.html { redirect_to @automobile, notice: 'Automobile ajoutée.' }
+        format.html { redirect_to automobiles_url, notice: 'Automobile ajoutée.' }
         format.json { render :show, status: :created, location: @automobile }
       else
         format.html { render :new }
@@ -42,7 +48,7 @@ class AutomobilesController < ApplicationController
   def update
     respond_to do |format|
       if @automobile.update(automobile_params)
-        format.html { redirect_to @automobile, notice: 'Automobile ùodifiée.' }
+        format.html { redirect_to automobiles_url, notice: 'Automobile modifiée.' }
         format.json { render :show, status: :ok, location: @automobile }
       else
         format.html { render :edit }
@@ -69,6 +75,6 @@ class AutomobilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def automobile_params
-      params.require(:automobile).permit(:marque, :modele, :couleur, :matricule, :prix, :administrateur_id, :billed_at)
+      params.require(:automobile).permit(:marque, :modele, :couleur, :matricule, :prix, :administrateur_id, :billed_at, :price, :etat_id)
     end
 end

@@ -5,6 +5,10 @@ class AutoincomesController < ApplicationController
   # GET /autoincomes.json
   def index
     @autoincomes = Autoincome.all
+    @dispos = Automobile.all.where("etat_id= 2")
+      def self.total_for_current_month
+    where("billed_at > ? AND billed_at < ?", Time.current.beginning_of_month, Time.current.end_of_month).sum(:prix)
+  end
   end
 
   # GET /autoincomes/1
