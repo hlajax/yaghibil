@@ -1,0 +1,30 @@
+ <%=render 'menus/top'%>
+        <div id="layoutSidenav">
+            <%=render 'menus/side'%>
+                         <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+<h1>Bilan de dépenses de l'année</h1>
+<div class="table-responsive mt-4">
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+  <thead>
+    <tr class="bg-dark text-white">
+      <th>Mois</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @autoexpenses_by_month.each do |expense_by_month| %>
+      <tr>
+        <td><%= expense_by_month.month.strftime("%B") %></td>
+        <td><b><%= expense_by_month.total %> XFA</b></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</div>

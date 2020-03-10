@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :autostatincomes, only: :index
+  resources :statincomes, only: :index
+  resources :autostats, only: :index
   resources :etats
   resources :autoincomes
   resources :dashauto
